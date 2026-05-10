@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.DS_Store
+.env
+
+# Large data files (>100MB, too big for GitHub)
+data/splits_tchard/*.csv
+
+# Model pickles (regeneratable)
+results/final/models/*.pkl
+
+# SHAP numpy arrays
+results/final/*.npy
