@@ -107,15 +107,15 @@
 
 ![文献对比图](results/final/figure4_comparison.png)
 
-![TCR-Hβ SHAP 条形图](results/final/TCR-Hβ_shap_bar.png)
-![TCR-HβE SHAP 条形图](results/final/TCR-HβE_shap_bar.png)
-![TCR-RS SHAP 条形图](results/final/TCR-RS_shap_bar.png)
-![TCR-HE SHAP 条形图](results/final/TCR-HE_shap_bar.png)
+### SHAP 特征重要性
 
-![TCR-Hβ SHAP 蜂群图](results/final/TCR-Hβ_shap_beeswarm.png)
-![TCR-HβE SHAP 蜂群图](results/final/TCR-HβE_shap_beeswarm.png)
-![TCR-RS SHAP 蜂群图](results/final/TCR-RS_shap_beeswarm.png)
-![TCR-HE SHAP 蜂群图](results/final/TCR-HE_shap_beeswarm.png)
+SHAP 分析使用 KernelExplainer（n_bg=30, n_explain=100, nsamples=50），以下展示两个主要模型的全局特征重要性排序。
+
+![TCR-HE SHAP 条形图](results/final/TCR-HE_shap_bar.png)
+**TCR-HE（epitope hard split）：** 最重要的特征来自疏水性矩（cdr3/aliphatic_index）、Kidera factors（KF3/5/7/9/10）、FASGAI 向量（F1/2/4/5/6）、MSWHIM 标度和 BLOSUM 指数，覆盖了疏水性、结构偏好、极性等多方面理化性质。
+
+![TCR-Hβ SHAP 条形图](results/final/TCR-Hβ_shap_bar.png)
+**TCR-Hβ（TCR hard split）：** 重要特征与 TCR-HE 高度一致，表明模型学到的预测规律不依赖于具体的数据分割方式。Kidera、FASGAI、BLOSUM 等特征组在不同分割中均持续排名前列。
 
 ---
 
