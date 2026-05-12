@@ -99,14 +99,23 @@
 
 ## 图
 
-| 图 | 文件 |
-|----|------|
-| ROC 曲线 | `results/final/roc_curves.png` |
-| 基线模型柱状图（RF/GBT/XGB/SVM-RBF） | `results/final/performance_bar_chart_baseline.png` |
-| TCR 模型柱状图（Hβ/HβE/RS/HE） | `results/final/performance_bar_chart_tcr.png` |
-| 文献对比图 | `results/final/figure4_comparison.png` |
-| SHAP 条形图（×4） | `results/final/{TCR-Hβ,TCR-HβE,TCR-RS,TCR-HE}_shap_bar.png` |
-| SHAP 蜂群图（×4） | `results/final/{TCR-Hβ,TCR-HβE,TCR-RS,TCR-HE}_shap_beeswarm.png` |
+![ROC 曲线](results/final/roc_curves.png)
+
+![基线模型柱状图](results/final/performance_bar_chart_baseline.png)
+
+![TCR 模型柱状图](results/final/performance_bar_chart_tcr.png)
+
+![文献对比图](results/final/figure4_comparison.png)
+
+![TCR-Hβ SHAP 条形图](results/final/TCR-Hβ_shap_bar.png)
+![TCR-HβE SHAP 条形图](results/final/TCR-HβE_shap_bar.png)
+![TCR-RS SHAP 条形图](results/final/TCR-RS_shap_bar.png)
+![TCR-HE SHAP 条形图](results/final/TCR-HE_shap_bar.png)
+
+![TCR-Hβ SHAP 蜂群图](results/final/TCR-Hβ_shap_beeswarm.png)
+![TCR-HβE SHAP 蜂群图](results/final/TCR-HβE_shap_beeswarm.png)
+![TCR-RS SHAP 蜂群图](results/final/TCR-RS_shap_beeswarm.png)
+![TCR-HE SHAP 蜂群图](results/final/TCR-HE_shap_beeswarm.png)
 
 ---
 
