@@ -1,0 +1,52 @@
+{
+  "results": [
+    {
+      "scenario": "0.5:1 (more pos)",
+      "actual_ratio": 0.5,
+      "neg": 37928,
+      "pos": 75857,
+      "AUC_predict": 0.867,
+      "time": 62.0
+    },
+    {
+      "scenario": "1:1 (balanced)",
+      "actual_ratio": 1.0,
+      "neg": 75857,
+      "pos": 75857,
+      "AUC_predict": 0.8692,
+      "time": 58.8
+    },
+    {
+      "scenario": "1.64:1 (original)",
+      "actual_ratio": 1.64,
+      "neg": 124131,
+      "pos": 75857,
+      "AUC_predict": 0.8636,
+      "time": 60.0
+    },
+    {
+      "scenario": "3:1",
+      "actual_ratio": 3.0,
+      "neg": 124131,
+      "pos": 41377,
+      "AUC_predict": 0.8599,
+      "time": 61.5
+    },
+    {
+      "scenario": "5:1",
+      "actual_ratio": 5.0,
+      "neg": 124131,
+      "pos": 24826,
+      "AUC_predict": 0.8647,
+      "time": 57.3
+    },
+    {
+      "scenario": "10:1",
+      "actual_ratio": 10.0,
+      "neg": 124131,
+      "pos": 12413,
+      "AUC_predict": 0.8409,
+      "time": 57.0
+    }
+  ]
+}
