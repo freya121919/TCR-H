@@ -11,3 +11,6 @@ results/final/models/*.pkl
 
 # SHAP numpy arrays
 results/final/*.npy
+
+# Local Claude settings
+.claude/settings.local.json
