@@ -112,10 +112,43 @@
 SHAP 分析使用 KernelExplainer（n_bg=30, n_explain=100, nsamples=50），以下展示两个主要模型的全局特征重要性排序。
 
 ![TCR-HE SHAP 条形图](results/final/TCR-HE_shap_bar.png)
-**TCR-HE（epitope hard split）：** 最重要的特征来自疏水性矩（cdr3/aliphatic_index）、Kidera factors（KF3/5/7/9/10）、FASGAI 向量（F1/2/4/5/6）、MSWHIM 标度和 BLOSUM 指数，覆盖了疏水性、结构偏好、极性等多方面理化性质。
+**TCR-HE（epitope hard split）：** CDR3β 侧的疏水性矩（aliphatic_index）、Kidera KF3/5/7/9/10 和 FASGAI F1/2/4/5/6 主导特征重要性排名。这些特征分别对应疏水性、α-螺旋/β-折叠倾向、侧链体积和极性等关键理化性质，表明 TCR-表位结合主要由互补决定区（CDR3）的全局物化特征驱动。
 
 ![TCR-Hβ SHAP 条形图](results/final/TCR-Hβ_shap_bar.png)
-**TCR-Hβ（TCR hard split）：** 重要特征与 TCR-HE 高度一致，表明模型学到的预测规律不依赖于具体的数据分割方式。Kidera、FASGAI、BLOSUM 等特征组在不同分割中均持续排名前列。
+**TCR-Hβ（TCR hard split）：** 重要特征与 TCR-HE 高度一致，Kidera、FASGAI、疏水性矩、分子量和不稳定性指数等特征组在不同分割方式中均排名前列，说明模型捕捉到的结合信号具有跨分割稳定性。
+
+---
+
+## 稳健性验证
+
+### 3× 额外分割（补充表 2）
+
+为验证模型性能对随机因素的敏感性，对三种分割方式各用 3 个不同随机种子（43/44/45）重新训练：
+
+| 分割方式 | AUC 范围 | AUC 均值 ± 标准差 |
+|---------|:--------:|:----------------:|
+| Epitope hard（TCR-HE） | 0.5784 – 0.9124 | 0.7833 ± 0.1465 |
+| TCR hard（TCR-Hβ） | 0.9178 – 0.9206 | **0.9188 ± 0.0013** |
+| Strict（TCR-HβE） | 0.8358 – 0.9254 | 0.8867 ± 0.0376 |
+
+TCR-Hβ 表现最佳且最稳定（标准差仅 0.0013）。TCR-HE 在 seed=45 时出现低 AUC（0.5784），原因是该分割下大部分预测偏向正类（Specificity=0.1959），说明 epitope hard 分割对随机种子敏感，部分随机化产生的测试集正负分布不利于模型判别。
+
+### 不平衡压力测试
+
+保持 SVM `class_weight="balanced"`，改变测试集正负比例：
+
+| 比例（neg:pos） | AUC(pred) |
+|:--------------:|:---------:|
+| 0.5:1（正多） | 0.8670 |
+| 1:1（平衡） | 0.8692 |
+| 1.64:1（原始） | 0.8636 |
+| 3:1 | 0.8599 |
+| 5:1 | 0.8647 |
+| 10:1 | 0.8409 |
+
+AUC(pred) 在 0.84–0.87 之间波动，显示模型对极端不平衡（10:1）仍保持稳健。论文报道的 0.72–0.853 范围低于本复现结果，可能由于 `class_weight="balanced"` 带来的额外稳健性。
+
+![不平衡压力测试](results/final/imbalance_stress_test.png)
 
 ---
 
@@ -126,6 +159,8 @@ SHAP 分析使用 KernelExplainer（n_bg=30, n_explain=100, nsamples=50），以
 3. 分割越严格 AUC 越低：TCR hard(0.92) > random(0.91) > strict(0.88) ≈ epitope hard(0.87)
 4. TCR-HE 在所有指标上超过 Pan-Peptide、epiTCR、NetTCR、ERGO 等已发表模型
 5. SHAP 显示不同分割方式下最重要特征一致（Kidera, FASGAI, MSWHIM, BLOSUM 等）
+6. 稳健性测试中 TCR-Hβ 最稳定（std=0.0013），TCR-HE 对随机种子较敏感
+7. 不平衡压力测试下 AUC 波动极小（0.84–0.87），模型对极端比例不敏感
 
 ---
 
