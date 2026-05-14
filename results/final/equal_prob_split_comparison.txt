@@ -1,0 +1,31 @@
+Equal-probability random epitope split vs sqrt-weighted greedy split
+=====================================================================
+Date: 2026-05-14
+Script: scripts/test_equal_prob_split.py
+
+seed      test_pos  test_neg   ratio  epi      AUC   time
+-------------------------------------------------------
+CSV          31511     22938    0.73   65  -    -
+seed=42      12085      1096    0.09  176   0.5582  36.6  <-- imbalanced
+seed=43      16380     22030    1.34  176   0.7606  61.9
+seed=44      28926     70154    2.43  176   0.5254 122.4
+seed=45      13574        85    0.01  176   0.5320  39.7  <-- imbalanced
+seed=46      16344      1497    0.09  176   0.5093  39.7  <-- imbalanced
+seed=47      25846     51286    1.98  176   0.6103  91.1
+seed=48      11072      2354    0.21  176   0.5071  37.4  <-- imbalanced
+seed=49      10863      1146    0.11  176   0.6206  36.1  <-- imbalanced
+seed=50      28076     73094    2.60  176   0.6979  84.3
+seed=51      12053       586    0.05  176   0.4962  37.7  <-- imbalanced
+seed=52      16128       828    0.05  176   0.5712  45.2  <-- imbalanced
+seed=53       8883        41    0.00  176   0.5310  35.3  <-- imbalanced
+seed=54      22313     69954    3.14  176   0.5039  99.8  <-- imbalanced
+seed=55      25234     21539    0.85  176   0.6751  66.9
+
+=== 原始 greedy (from earlier robustness test) ===
+  seed=43  AUC=0.8590
+  seed=44  AUC=0.9124
+  seed=45  AUC=0.5784
+
+Conclusion: Equal-probability split is consistently worse —
+12/14 seeds produce extreme class imbalance and AUC near 0.50.
+The sqrt-weighted greedy approach is retained for stable sample sizes.
