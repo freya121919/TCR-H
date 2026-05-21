@@ -1,0 +1,58 @@
+{
+  "TCR-RS": {
+    "permutation_importance": [
+      {
+        "rank": 1,
+        "feature": "epitope_hydrophobic_moment",
+        "importance": 0.002743
+      },
+      {
+        "rank": 2,
+        "feature": "cdr3_KF9",
+        "importance": 0.002739
+      },
+      {
+        "rank": 3,
+        "feature": "cdr3_SVGER4",
+        "importance": 0.002328
+      },
+      {
+        "rank": 4,
+        "feature": "epitope_ST7",
+        "importance": 0.002237
+      },
+      {
+        "rank": 5,
+        "feature": "epitope_KF7",
+        "importance": 0.001934
+      }
+    ],
+    "shap": [
+      {
+        "rank": 1,
+        "feature": "cdr3_KF9",
+        "mean_abs_shap": 0.02271
+      },
+      {
+        "rank": 2,
+        "feature": "epitope_KF5",
+        "mean_abs_shap": 0.022314
+      },
+      {
+        "rank": 3,
+        "feature": "cdr3_BLOSUM5",
+        "mean_abs_shap": 0.022016
+      },
+      {
+        "rank": 4,
+        "feature": "epitope_hydrophobic_moment",
+        "mean_abs_shap": 0.019694
+      },
+      {
+        "rank": 5,
+        "feature": "epitope_BLOSUM8",
+        "mean_abs_shap": 0.019348
+      }
+    ]
+  }
+}

@@ -1,0 +1,226 @@
+{
+  "TCR-HE": {
+    "permutation_importance": [
+      {
+        "rank": 1,
+        "feature": "epitope_T3",
+        "importance": 0.017307
+      },
+      {
+        "rank": 2,
+        "feature": "epitope_SVGER10",
+        "importance": 0.014893
+      },
+      {
+        "rank": 3,
+        "feature": "epitope_BLOSUM9",
+        "importance": 0.008674
+      },
+      {
+        "rank": 4,
+        "feature": "cdr3_BLOSUM10",
+        "importance": 0.007714
+      },
+      {
+        "rank": 5,
+        "feature": "cdr3_mz",
+        "importance": 0.00763
+      }
+    ],
+    "shap": [
+      {
+        "rank": 1,
+        "feature": "epitope_SVGER6",
+        "mean_abs_shap": 0.061329
+      },
+      {
+        "rank": 2,
+        "feature": "epitope_F4",
+        "mean_abs_shap": 0.054722
+      },
+      {
+        "rank": 3,
+        "feature": "epitope_T3",
+        "mean_abs_shap": 0.053635
+      },
+      {
+        "rank": 4,
+        "feature": "epitope_SVGER10",
+        "mean_abs_shap": 0.052325
+      },
+      {
+        "rank": 5,
+        "feature": "epitope_MSWHIM3",
+        "mean_abs_shap": 0.050539
+      }
+    ]
+  },
+  "TCR-Hβ": {
+    "permutation_importance": [
+      {
+        "rank": 1,
+        "feature": "cdr3_molecular_weight",
+        "importance": 0.00511
+      },
+      {
+        "rank": 2,
+        "feature": "cdr3_SVGER5",
+        "importance": 0.004479
+      },
+      {
+        "rank": 3,
+        "feature": "cdr3_KF9",
+        "importance": 0.00426
+      },
+      {
+        "rank": 4,
+        "feature": "cdr3_BLOSUM10",
+        "importance": 0.003913
+      },
+      {
+        "rank": 5,
+        "feature": "cdr3_MSWHIM2",
+        "importance": 0.003863
+      }
+    ],
+    "shap": [
+      {
+        "rank": 1,
+        "feature": "cdr3_molecular_weight",
+        "mean_abs_shap": 0.037481
+      },
+      {
+        "rank": 2,
+        "feature": "cdr3_BLOSUM10",
+        "mean_abs_shap": 0.03583
+      },
+      {
+        "rank": 3,
+        "feature": "epitope_KF5",
+        "mean_abs_shap": 0.031762
+      },
+      {
+        "rank": 4,
+        "feature": "cdr3_SVGER5",
+        "mean_abs_shap": 0.030671
+      },
+      {
+        "rank": 5,
+        "feature": "epitope_SVGER4",
+        "mean_abs_shap": 0.026317
+      }
+    ]
+  },
+  "TCR-HβE": {
+    "permutation_importance": [
+      {
+        "rank": 1,
+        "feature": "epitope_KF1",
+        "importance": 0.023096
+      },
+      {
+        "rank": 2,
+        "feature": "epitope_BLOSUM9",
+        "importance": 0.01308
+      },
+      {
+        "rank": 3,
+        "feature": "epitope_KF10",
+        "importance": 0.010409
+      },
+      {
+        "rank": 4,
+        "feature": "cdr3_BLOSUM5",
+        "importance": 0.007213
+      },
+      {
+        "rank": 5,
+        "feature": "cdr3_BLOSUM10",
+        "importance": 0.007109
+      }
+    ],
+    "shap": [
+      {
+        "rank": 1,
+        "feature": "epitope_KF10",
+        "mean_abs_shap": 0.079701
+      },
+      {
+        "rank": 2,
+        "feature": "epitope_BLOSUM9",
+        "mean_abs_shap": 0.051192
+      },
+      {
+        "rank": 3,
+        "feature": "epitope_KF1",
+        "mean_abs_shap": 0.045526
+      },
+      {
+        "rank": 4,
+        "feature": "epitope_ProtFP7",
+        "mean_abs_shap": 0.04269
+      },
+      {
+        "rank": 5,
+        "feature": "epitope_SVGER2",
+        "mean_abs_shap": 0.039176
+      }
+    ]
+  },
+  "TCR-RS": {
+    "permutation_importance": [
+      {
+        "rank": 1,
+        "feature": "epitope_hydrophobic_moment",
+        "importance": 0.002743
+      },
+      {
+        "rank": 2,
+        "feature": "cdr3_KF9",
+        "importance": 0.002739
+      },
+      {
+        "rank": 3,
+        "feature": "cdr3_SVGER4",
+        "importance": 0.002328
+      },
+      {
+        "rank": 4,
+        "feature": "epitope_ST7",
+        "importance": 0.002237
+      },
+      {
+        "rank": 5,
+        "feature": "epitope_KF7",
+        "importance": 0.001934
+      }
+    ],
+    "shap": [
+      {
+        "rank": 1,
+        "feature": "cdr3_KF9",
+        "mean_abs_shap": 0.02271
+      },
+      {
+        "rank": 2,
+        "feature": "epitope_KF5",
+        "mean_abs_shap": 0.022314
+      },
+      {
+        "rank": 3,
+        "feature": "cdr3_BLOSUM5",
+        "mean_abs_shap": 0.022016
+      },
+      {
+        "rank": 4,
+        "feature": "epitope_hydrophobic_moment",
+        "mean_abs_shap": 0.019694
+      },
+      {
+        "rank": 5,
+        "feature": "epitope_BLOSUM8",
+        "mean_abs_shap": 0.019348
+      }
+    ]
+  }
+}

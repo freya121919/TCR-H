@@ -1,0 +1,110 @@
+{
+  "TCR-H\u03b2": [
+    {
+      "rank": 1,
+      "feature": "epitope_ST7",
+      "importance": 0.03233333333333325
+    },
+    {
+      "rank": 2,
+      "feature": "epitope_SVGER6",
+      "importance": 0.024666666666666576
+    },
+    {
+      "rank": 3,
+      "feature": "epitope_BLOSUM9",
+      "importance": 0.024666666666666576
+    },
+    {
+      "rank": 4,
+      "feature": "epitope_ST5",
+      "importance": 0.019999999999999907
+    },
+    {
+      "rank": 5,
+      "feature": "cdr3_SVGER3",
+      "importance": 0.019666666666666572
+    }
+  ],
+  "TCR-H\u03b2E": [
+    {
+      "rank": 1,
+      "feature": "epitope_F6",
+      "importance": 0.018000000000000016
+    },
+    {
+      "rank": 2,
+      "feature": "epitope_KF10",
+      "importance": 0.01566666666666668
+    },
+    {
+      "rank": 3,
+      "feature": "epitope_KF5",
+      "importance": 0.012666666666666678
+    },
+    {
+      "rank": 4,
+      "feature": "epitope_F4",
+      "importance": 0.012666666666666678
+    },
+    {
+      "rank": 5,
+      "feature": "epitope_Z3",
+      "importance": 0.011333333333333343
+    }
+  ],
+  "TCR-RS": [
+    {
+      "rank": 1,
+      "feature": "epitope_ST7",
+      "importance": 0.03199999999999992
+    },
+    {
+      "rank": 2,
+      "feature": "epitope_BLOSUM9",
+      "importance": 0.018999999999999944
+    },
+    {
+      "rank": 3,
+      "feature": "epitope_ST5",
+      "importance": 0.015000000000000013
+    },
+    {
+      "rank": 4,
+      "feature": "epitope_aliphatic_index",
+      "importance": 0.013333333333333345
+    },
+    {
+      "rank": 5,
+      "feature": "epitope_F4",
+      "importance": 0.013000000000000012
+    }
+  ],
+  "TCR-HE": [
+    {
+      "rank": 1,
+      "feature": "epitope_SVGER3",
+      "importance": 0.10366666666666664
+    },
+    {
+      "rank": 2,
+      "feature": "epitope_F2",
+      "importance": 0.06966666666666661
+    },
+    {
+      "rank": 3,
+      "feature": "epitope_ProtFP8",
+      "importance": 0.0433333333333333
+    },
+    {
+      "rank": 4,
+      "feature": "epitope_KF5",
+      "importance": 0.03866666666666663
+    },
+    {
+      "rank": 5,
+      "feature": "epitope_SV4",
+      "importance": 0.02866666666666669
+    }
+  ]
+}
