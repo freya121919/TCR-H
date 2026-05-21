@@ -21,36 +21,53 @@
 
 ```
 TCR-H/
-├── CLAUDE.md                     # 项目说明
-├── requirements.txt              # 依赖项
+├── .gitignore                     # Git 忽略规则
+├── CLAUDE.md                      # 项目说明
+├── report.md                      # 复现报告
+├── requirements.txt               # 依赖项
+├── submit.sh                      # SLURM 提交脚本（HPC）
 ├── scripts/
-│   ├── train_final.py            # 主训练脚本（8 个模型+对应的数据分割处理（除Epitope-hard））
-│   ├── peptide_features.py       # 特征工程
-│   ├── figure4_comparison.py     # 模仿论文Figure4,与先前模型的性能对比
-│   ├── robustness_test.py        # 鲁棒性测试（多种 seed + split）
-│   ├── imbalance_stress_test.py  # 类别不平衡压力测试
-│   ├── shap_top50.py             # SHAP Top 50 特征重要性
-│   └── test_equal_prob_split.py  # 等概率分割 vs sqrt-weighted greedy
+│   ├── train_final.py             # 主训练脚本（8 个模型+对应数据分割）
+│   ├── run_one_model.py           # 单模型运行器（SLURM array jobs）
+│   ├── peptide_features.py        # 特征工程
+│   ├── figure4_comparison.py      # 模仿论文Figure4,与先前模型的性能对比
+│   ├── robustness_test.py         # 鲁棒性测试（多种 seed + split）
+│   ├── imbalance_stress_test.py   # 类别不平衡压力测试
+│   ├── shap_top50.py              # SHAP Top 50 特征重要性
+│   └── test_equal_prob_split.py   # 等概率分割 vs sqrt-weighted greedy
 ├── src/
-│   ├── data/                     # 数据加载与分割
-│   ├── features/                 # 特征构建
-│   ├── models/                   # 模型定义
-│   └── evaluation/               # 评估指标
-├── data/splits_tchard/           # Epitope-hard 分割数据
-├── results/final/
-│   ├── results_table.csv         # 主结果汇总
-│   ├── roc_curves.png            # ROC 曲线
-│   ├── performance_bar_chart*.png
-│   ├── figure4_comparison.png
-│   ├── imbalance_stress_test.*
-│   ├── robustness_test.*
-│   ├── tcr_he_features_removed.json
-│   ├── equal_prob_split_comparison.txt
-│   ├── shap_*.png                # SHAP 可解释性图
-│   └── models/*.pkl              # 8 个训练好的模型
-└── 1.md                          # 本报告
+│   ├── data/
+│   │   ├── loaders.py             # 数据加载
+│   │   └── splits.py              # 数据分割（含_greedy_hard_split）
+│   ├── features/                  # 特征构建
+│   ├── models/
+│   │   └── train_svm.py           # SVM 模型定义
+│   └── evaluation/                # 评估指标
+├── results/
+│   ├── final/                     # 本地结果（30K 子采样）
+│   │   ├── results_table.csv      # 主结果汇总
+│   │   ├── roc_curves.png
+│   │   ├── performance_bar_chart*.png
+│   │   ├── figure4_comparison.png
+│   │   ├── imbalance_stress_test.*
+│   │   ├── robustness_test.*
+│   │   ├── tcr_he_features_removed.json
+│   │   ├── equal_prob_split_comparison.txt
+│   │   ├── shap_*.png             # SHAP 可解释性图
+│   │   └── models/                # （仅含 30K 模型，未跟踪 .pkl）
+│   └── final_hpc/                 # HPC 结果（全量 + GridSearchCV）
+│       ├── results_table.csv
+│       ├── roc_curves.png
+│       ├── performance_bar_chart_*.png
+│       ├── tcr_he_features_removed.json
+│       ├── models/
+│       │   ├── svm_rbf_baseline.pkl
+│       │   ├── tcr_he.pkl
+│       │   ├── tcr_hb.pkl
+│       │   ├── tcr_hbe.pkl
+│       │   └── tcr_rs.pkl
+│       └── *_shap_*.png + .npy    # SHAP 图 + 原始值
 ```
-
 ---
 
 ## 2. 实验设定
